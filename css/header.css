@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  border-bottom: 2px solid gainsboro;
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+@keyframes moving {
+  0% {
+    transform: scale(0.8);
+    rotate: 0deg;
+  }
+
+  40% {
+    transform: scale(2);
+    rotate: 360deg;
+  }
+  100% {
+    transform: scale(1);
+    rotate: 0deg;
+  }
+}
+.header_img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  animation: 1s moving;
+}
+#wordihudee {
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: default;
+  animation: 1s moving;
+}
+#subscribe {
+  font-size: 15px;
+  border: 1px solid black;
+  padding: 5px 20px 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  animation: 1s moving;
+}

@@ -1,0 +1,68 @@
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.keyboard-bigkey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  height: 50px;
+  width: 70px;
+  border-radius: 10px;
+  animation: start 1s;
+  font-weight: bolder;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+}
+.keyboard-bigkey img {
+  height: 30px;
+  width: 30px;
+}
+.keyboard-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0c0c0;
+  color: white;
+  height: 50px;
+  width: 40px;
+  border-radius: 10px;
+  animation: start 1s;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+}
+@keyframes start {
+  to {
+    transform: rotateX(360deg);
+  }
+  from {
+    transform: rotateX(0deg);
+  }
+}
+
+.keyboard-bigkey:hover {
+  background-color: #e5e5e5;
+}
+.keyboard-key:hover {
+  background-color: gainsboro;
+  color: black;
+}
+.keyboard-key:active {
+  background-color: skyblue;
+  color: white;
+}
+.keyboard-bigkey:active {
+  background-color: skyblue;
+}
