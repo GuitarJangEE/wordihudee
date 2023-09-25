@@ -1,6 +1,9 @@
 document.title = "Wordihudee";
 const timerSpot = document.getElementById("timer");
 const overSpot = document.getElementById("over");
+const imgOverSpot = document.getElementById("imgover");
+const vic = document.getElementById("vic");
+const imgvic = document.getElementById("imgvic");
 // querySelector은 첫번째로일치하는 단일요소를 불러오고 All은 모든요소를 선택한다
 const keyPad = document.querySelectorAll(".keyboard-key");
 const keyPadBig = document.querySelectorAll(".keyboard-bigkey");
@@ -22,8 +25,18 @@ function 게임시작() {
     기회 += 1;
     위치 = 0;
   };
-  // if (위치 !== 0) 위치 -= 1;
-
+  const 승리 = () => {
+    window.removeEventListener("keydown", press);
+    keyPad.forEach((a) => {
+      a.removeEventListener("click", 반환);
+    });
+    keyPadBig.forEach((a) => {
+      a.removeEventListener("click", 반환);
+    });
+    clearInterval(멈추자);
+    vic.style = "display: block;";
+    imgvic.style = "transform: rotateX(0deg); opacity: 1";
+  };
   const gameOver = () => {
     window.removeEventListener("keydown", press);
     keyPad.forEach((a) => {
@@ -33,8 +46,8 @@ function 게임시작() {
       a.removeEventListener("click", 반환);
     });
     clearInterval(멈추자);
-    const 끝낫다능 = document.getElementById("over");
-    끝낫다능.style = "display: block; transition: all ease-in-out 3s";
+    overSpot.style = "display: block;";
+    imgOverSpot.style = "transform: rotateX(0deg); opacity: 1";
   };
   const 정답확인 = () => {
     console.log("정답확인해봄");
@@ -45,11 +58,11 @@ function 게임시작() {
       const 정답글자 = 정답[i];
       const 키보드야 = document.querySelector(`
         .keyboard-key[data-key="${답안지글자}"]`);
-      const 키보드글자 = 키보드야.innerText;
-      console.log("정답글자", 키보드글자);
+      // const 키보드글자 = 키보드야.innerText;
+      // console.log("정답글자", 키보드글자);
       if (정답글자 === 답안지글자) {
-        console.log("if안 답안지글자", 답안지글자);
-        console.log("if안 정답글자", 정답글자);
+        // console.log("if안 답안지글자", 답안지글자);
+        // console.log("if안 정답글자", 정답글자);
         맞은갯수 += 1;
         답안지.style.backgroundColor = "#6AAA64";
         답안지.style.color = "white";
@@ -67,20 +80,8 @@ function 게임시작() {
         키보드야.style.color = "white";
       }
     }
-    const 답안지2 = document.querySelector(`.kan[word='${기회}${위치}']`);
-    const 정답글자2 = 정답[1];
 
-    console.log("정답글자", 정답글자2);
-    console.log("e답안지2", 답안지2);
-    for (let i = 0; i < keyPad.length; i++) {
-      키 = keyPad[i];
-      console.log("키".키);
-      let 데타키 = 키.getAttribute("data-key");
-      console.log("키의데이터", 데타키);
-      //   const 답안지글자2 = 답안지2.innerText;
-      //   const 정답글자2 = 정답[i];
-    }
-    if (맞은갯수 === 5) gameOver();
+    if (맞은갯수 === 5) 승리();
     else 기회한번씀();
   };
   const press = (a) => {
@@ -98,7 +99,7 @@ function 게임시작() {
       return;
       //   칸꽉차서리턴
     }
-    console.log(key);
+    // console.log(key);
     if (65 <= keyCode && keyCode <= 90) {
       wordBlock.innerText = key;
       위치 += 1;
@@ -119,14 +120,14 @@ function 게임시작() {
       //   칸 꽉차서 리턴
     }
 
-    console.log(데이터키);
+    // console.log(데이터키);
 
     //ㄹㄴㄹㅁㄴㄻㄴ
     if (데이터키.length === 1) {
       wordBlock.innerText = 데이터키;
       위치 += 1;
     }
-    console.log(위치, 기회);
+    // console.log(위치, 기회);
   }
   keyPad.forEach((a) => {
     a.addEventListener("click", 반환);

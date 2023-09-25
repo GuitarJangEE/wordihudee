@@ -28,13 +28,47 @@ main {
   animation: 1s start;
   transition: all ease-in-out 0.7s;
 }
-#over {
+
+#vic {
   position: absolute;
-  top: 270px;
+  top: 110px;
   cursor: default;
   font-size: 50px;
   background-color: rgba(255, 255, 255, 0.7);
   display: none;
+  transition: all ease-in-out 3s;
+}
+#imgvic {
+  position: fixed;
+  top: 10px;
+  cursor: default;
+  font-size: 50px;
+  scale: 0.3;
+  background-color: 5px solid rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transform: rotateX(360deg);
+  /* display: non; */
+  transition: all ease-in-out 3s;
+}
+#over {
+  position: absolute;
+  top: 110px;
+  cursor: default;
+  font-size: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: none;
+  transition: all ease-in-out 3s;
+}
+#imgover {
+  position: fixed;
+  top: 10px;
+  cursor: default;
+  font-size: 50px;
+  scale: 0.3;
+  background-color: 5px solid rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transform: rotateX(360deg);
+  /* display: none; */
   transition: all ease-in-out 3s;
 }
 #timer {
