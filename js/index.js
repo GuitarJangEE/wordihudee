@@ -7,7 +7,7 @@ const imgvic = document.getElementById("imgvic");
 // querySelector은 첫번째로일치하는 단일요소를 불러오고 All은 모든요소를 선택한다
 const keyPad = document.querySelectorAll(".keyboard-key");
 const keyPadBig = document.querySelectorAll(".keyboard-bigkey");
-const 정답 = "QWERT";
+const 정답 = "TRAIN";
 let 위치 = 0;
 let 기회 = 0;
 let 키 = keyPad;
